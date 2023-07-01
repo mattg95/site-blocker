@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Site blocker",
+    "version": "1.0",
+    "description": "Sets a timeout on problem sites.",
+    "action": {
+        "default_icon": "images/block.png",
+        "default_popip": "popup.html"
+    },
+    "content_scripts": [{
+        "js": ["scripts/content.js"],
+        "matches": [
+           "https://www.google.com/", "https://www.reddit.com/*", "https://www.pinkbike.com/*"
+        ],
+        "css": ["styles.css"],
+        "type": "module"
+    }],
+    "web_accessible_resources": [{
+        "matches": ["<all_urls>"],
+        "resources": ["images/*"]
+
+    }]
+
+}
